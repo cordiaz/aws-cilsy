@@ -15,3 +15,7 @@ unzip master.zip
 sudo rm /var/www/html/index.html
 sudo mv sosial-media-master/* /var/www/html
 echo "Setup selesai"
+#
+# service apache2 status
+# service mysql status
+#
