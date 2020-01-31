@@ -1,0 +1,7 @@
+3.10.22.40
+35.178.249.204
+3.8.154.246
+
+ssh -i "LondonKey.pem" ubuntu@3.10.22.40
+ssh -i "LondonKey.pem" ubuntu@35.178.249.204
+ssh -i "LondonKey.pem" ubuntu@3.8.154.246

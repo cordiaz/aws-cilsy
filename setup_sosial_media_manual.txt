@@ -1,9 +1,9 @@
-sudo mysql -u root -p
+sudo mysql -u root
 CREATE USER 'devopscilsy'@'localhost' IDENTIFIED BY '1234567890';
 
-\q
-
 grant all privileges on *.* to 'devopscilsy'@'localhost';
+
+\q
 
 sudo mysql -u devopscilsy -p
 create database dbsosmed;
@@ -18,3 +18,8 @@ sudo mysql -u devopscilsy -p dbsosmed < dump.sql
 password:
 
 INSERT INTO users ('id','username','email','password','name','photo') VALUES ('','cordiaz','cordiaz2000@gmail.com','cordiaz','Muhammad Cordiaz','');
+
+UPDATE mysql.user SET Host='%' WHERE Host='localhost' AND User='devopscilsy';
+FLUSH PRIVILEGES;
+
+
