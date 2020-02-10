@@ -22,4 +22,42 @@ INSERT INTO users ('id','username','email','password','name','photo') VALUES (''
 UPDATE mysql.user SET Host='%' WHERE Host='localhost' AND User='devopscilsy';
 FLUSH PRIVILEGES;
 
+==== rds =====
+
+sudo mysql -h db-test.cjxjcfrib9h0.ap-southeast-1.rds.amazonaws.com -u root -p
+
+create database db_test;
+
+sudo mysql -h db-test.cjxjcfrib9h0.ap-southeast-1.rds.amazonaws.com -u root -p db_test < sbsosmed.sql
+
+==== config.php di rds ====
+
+<?php
+
+$db_host = "db-test.cjxjcfrib9h0.ap-southeast-1.rds.amazonaws.com";
+// endpoint rds
+$db_user = "root";
+$db_pass = "1234567890";
+$db_name = "dbsosmed";
+
+try {    
+    //create PDO connection 
+    $db = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+} catch(PDOException $e) {
+    //show error
+    die("Terjadi masalah: " . $e->getMessage());
+}
+?>
+
+========== setting rds cilsy-sp2 ===========
+
+dbname: database-1
+endpoint: database-1.crzspssktdmf.ap-southeast-1.rds.amazonaws.com
+user: root
+passwd: 1234567890
+
+create database dbsosmed;
+
+
+
 
